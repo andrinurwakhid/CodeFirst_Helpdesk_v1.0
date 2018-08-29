@@ -7,7 +7,7 @@ using Helpdesk_CodeFirst.Model;
 
 namespace Helpdesk_CodeFirst.Controllers
 {
-    class DueDateController
+    class TipeController
     {
         HelpdeskContext hld_context = new HelpdeskContext();
 
@@ -15,20 +15,20 @@ namespace Helpdesk_CodeFirst.Controllers
         public void InsertDueDate()
         {
             Console.Clear();
-            System.Console.Write("Tipe DueDate       : ");
+            System.Console.Write("Tipe               : ");
             string Tipe = System.Console.ReadLine();
-            System.Console.Write("Interval DueDate   : ");
+            System.Console.Write("Interval Type      : ");
             int interval = Convert.ToInt32(System.Console.ReadLine());
 
-            DueDateCls call = new DueDateCls();
+            TipeCls call = new TipeCls();
             {
-                call.Type = Tipe;
+                call.Tipe = Tipe;
                 call.Interval = interval;
 
             };
             try
             {
-                hld_context.DueDate_s.Add(call);
+                hld_context.Tipe_s.Add(call);
                 var result = hld_context.SaveChanges();
             }
             catch (Exception ex)
@@ -37,13 +37,13 @@ namespace Helpdesk_CodeFirst.Controllers
             }
         }
         // =========================================== READ =============================================
-        public List<DueDateCls> GetAllDueDate()
+        public List<TipeCls> GetAllTipe()
         {
-            var getalls = hld_context.DueDate_s.ToList();
-            foreach (DueDateCls duedate in getalls)
+            var getalls = hld_context.Tipe_s.ToList();
+            foreach (TipeCls duedate in getalls)
             {
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
-                System.Console.WriteLine("Type                  : " + duedate.Type);
+                System.Console.WriteLine("Type                  : " + duedate.Tipe);
                 System.Console.WriteLine("Interval              : " + duedate.Interval);
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
             }
@@ -51,9 +51,9 @@ namespace Helpdesk_CodeFirst.Controllers
             return getalls;
         }
         // =========================================== UPDATE =============================================
-        public DueDateCls GetBytype(string input)
+        public TipeCls GetBytype(string input)
         {
-            var duedate = hld_context.DueDate_s.Find(input);
+            var duedate = hld_context.Tipe_s.Find(input);
             if (duedate == null)
             {
                 System.Console.WriteLine("type tersebut tidak ada");
@@ -69,15 +69,15 @@ namespace Helpdesk_CodeFirst.Controllers
             System.Console.Write("MASUKKAN ULANG Type         : ");
             string id_type = System.Console.ReadLine();
 
-            var getmhs = hld_context.DueDate_s.Find(id_type);
+            var getmhs = hld_context.Tipe_s.Find(id_type);
             if (getmhs == null)
             {
                 System.Console.Write("TIDAK ADA Type DueDate  : " + id_type);
             }
             else
             {
-                DueDateCls dd = GetBytype(input);
-                dd.Type = id_type;
+                TipeCls dd = GetBytype(input);
+                dd.Tipe = id_type;
                 dd.Interval = interval;
 
                 hld_context.Entry(dd).State = System.Data.Entity.EntityState.Modified;
@@ -88,8 +88,8 @@ namespace Helpdesk_CodeFirst.Controllers
         // =========================================== DELETE =============================================
         public void DeleteDueDate(string input)
         {
-            var x = (from y in hld_context.DueDate_s where y.Type == input select y).FirstOrDefault();
-            hld_context.DueDate_s.Remove(x);
+            var x = (from y in hld_context.Tipe_s where y.Tipe == input select y).FirstOrDefault();
+            hld_context.Tipe_s.Remove(x);
             hld_context.SaveChanges();
         }
     }

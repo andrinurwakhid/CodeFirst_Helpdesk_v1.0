@@ -69,7 +69,7 @@ namespace Helpdesk_CodeFirst.Controllers
             int catid = Convert.ToInt32(System.Console.ReadLine());
             Console.WriteLine("\n");
             Console.WriteLine("=============================================");
-            System.Console.Write("MASUKKAN ULANG ID       : ");
+            System.Console.Write("MASUKKAN ULANG ID           : ");
             int id_subcat = Convert.ToInt32(System.Console.ReadLine());
 
             var getmhs = hld_context.SubCategory_s.Find(id_subcat);

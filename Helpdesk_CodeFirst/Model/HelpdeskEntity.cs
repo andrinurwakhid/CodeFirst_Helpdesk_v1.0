@@ -32,7 +32,6 @@ namespace Helpdesk_CodeFirst
     class TicketCls
     {
         public int ID { get; set; }
-        public string Type { get; set; }
         public string Description { get; set; }
         public DateTime Dtm_Crt { get; set; }
         public string L1 { get; set; }
@@ -46,11 +45,13 @@ namespace Helpdesk_CodeFirst
         public string Technician { get; set; }
         public string Status { get; set; }
 
+        public int TipeID { get; set; }
         public int UserID { get; set; }
         public int CategoryID { get; set; }
         public int SubCategoryID { get; set; }
 
 
+        public virtual TipeCls Tipe { get; set; }
         public virtual UserCls User { get; set; }
         public virtual CategoryCls Category { get; set; }
         public virtual SubCategoryCls SubCategory { get; set; }
@@ -79,9 +80,10 @@ namespace Helpdesk_CodeFirst
         public DateTime Dates { get; set; }
         public string Description { get; set; }
     }
-    class DueDateCls
+    class TipeCls
     {
-        public string Type { get; set; }
+        public int ID { get; set; }
+        public string Tipe { get; set; }
         public int Interval { get; set; }
 
     }

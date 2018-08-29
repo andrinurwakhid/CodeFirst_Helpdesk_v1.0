@@ -84,7 +84,7 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
-                    DueDateController panggildd = new DueDateController();
+                    TipeController panggildd = new TipeController();
                     panggildd.InsertDueDate();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
@@ -141,8 +141,8 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
-                    DueDateController panggildd = new DueDateController();
-                    panggildd.GetAllDueDate();
+                    TipeController panggildd = new TipeController();
+                    panggildd.GetAllTipe();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -208,7 +208,7 @@ namespace Helpdesk_CodeFirst
                 case 4:
                     System.Console.Write("Masukkan Id yang ingin di ubah : ");
                     input4 = System.Console.ReadLine();
-                    DueDateController panggildd = new DueDateController();
+                    TipeController panggildd = new TipeController();
                     panggildd.UpdateDuedate(input4);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
@@ -278,7 +278,7 @@ namespace Helpdesk_CodeFirst
                 case 4:
                     System.Console.Write("Masukkan Id yang ingin di hapus : ");
                     input4 = System.Console.ReadLine();
-                    DueDateController panggildd = new DueDateController();
+                    TipeController panggildd = new TipeController();
                     panggildd.DeleteDueDate(input4);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
