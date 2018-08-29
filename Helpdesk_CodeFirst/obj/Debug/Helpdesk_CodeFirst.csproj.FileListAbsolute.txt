@@ -1,5 +1,4 @@
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\bin\Debug\Helpdesk_CodeFirst.exe.config
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.csprojResolveAssemblyReference.cache
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\bin\Debug\Helpdesk_CodeFirst.exe
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\bin\Debug\Helpdesk_CodeFirst.pdb
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\bin\Debug\EntityFramework.dll
@@ -8,3 +7,4 @@ D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpde
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.exe
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.pdb
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.csprojResolveAssemblyReference.cache

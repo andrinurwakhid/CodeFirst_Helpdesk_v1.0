@@ -15,6 +15,10 @@ namespace Helpdesk_CodeFirst
         public int ID { get; set; }
         public string Role { get; set; }
 
+        public static implicit operator RoleCls(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
     class SubCategoryCls
     {
@@ -59,11 +63,11 @@ namespace Helpdesk_CodeFirst
         public string Last_Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
-
-        public int DepartmentID { get; set; }
         public int RoleID { get; set; }
+        public int DepartmentID { get; set; }
+
         public virtual RoleCls Role { get; set; }
         public virtual DepartmentCls Department { get; set; }
 
@@ -84,7 +88,6 @@ namespace Helpdesk_CodeFirst
     {
         public int ID { get; set; }
         public string Department_Name { get; set; }
-
     }
     class CategoryCls
     {

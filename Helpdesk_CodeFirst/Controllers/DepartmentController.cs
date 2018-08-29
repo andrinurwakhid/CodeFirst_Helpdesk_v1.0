@@ -7,25 +7,25 @@ using Helpdesk_CodeFirst.Model;
 
 namespace Helpdesk_CodeFirst.Controllers
 {
-    class RoleController
+    class DepartmentController
     {
         HelpdeskContext hld_context = new HelpdeskContext();
 
         // =========================================== INSERT =============================================
-        public void InsertRole()
+        public void InsertDepartment()
         {
             Console.Clear();
-            System.Console.Write("Nama Role : ");
-            string Nama_Role = System.Console.ReadLine();
+            System.Console.Write("Nama Department : ");
+            string Nama_Department = System.Console.ReadLine();
 
-            RoleCls call = new RoleCls();
+            DepartmentCls call = new DepartmentCls();
             {
-                call.Role = Nama_Role;
+                call.Department_Name = Nama_Department;
 
             };
             try
             {
-                hld_context.Role_s.Add(call);
+                hld_context.Department_s.Add(call);
                 var result = hld_context.SaveChanges();
             }
             catch (Exception ex)
@@ -34,58 +34,58 @@ namespace Helpdesk_CodeFirst.Controllers
             }
         }
         // =========================================== READ =============================================
-        public List<RoleCls> GetAllRole()
+        public List<DepartmentCls> GetAllDepartment()
         {
-            var getalls = hld_context.Role_s.ToList();
-            foreach (RoleCls role in getalls)
+            var getalls = hld_context.Department_s.ToList();
+            foreach (DepartmentCls department in getalls)
             {
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
-                System.Console.WriteLine("ID                : " + role.ID);
-                System.Console.WriteLine("NAMA              : " + role.Role);
+                System.Console.WriteLine("ID                : " + department.ID);
+                System.Console.WriteLine("NAMA              : " + department.Department_Name);
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
             }
             Console.ReadKey(true);
             return getalls;
         }
         // =========================================== UPDATE =============================================
-        public RoleCls GetById(int input)
+        public DepartmentCls GetById(int input)
         {
-            var role = hld_context.Role_s.Find(input);
-            if (role == null)
+            var department = hld_context.Department_s.Find(input);
+            if (department == null)
             {
                 System.Console.WriteLine("Id tersebut tidak ada");
             }
-            return role;
+            return department;
         }
-        public int UpdateRole(int input)
+        public int UpdateDepartment(int input)
         {
             System.Console.Write("MASUKKAN NAMA        : ");
             string Nama = System.Console.ReadLine();
             Console.WriteLine("\n");
             Console.WriteLine("=============================================");
             System.Console.Write("MASUKKAN ULANG ID    : ");
-            string id_role = System.Console.ReadLine();
+            string id_dpt = System.Console.ReadLine();
 
-            var getmhs = hld_context.Role_s.Find(Convert.ToInt16(id_role));
+            var getmhs = hld_context.Role_s.Find(Convert.ToInt16(id_dpt));
             if (getmhs == null)
             {
-                System.Console.Write("TIDAK ADA ID ROLE : " + id_role);
+                System.Console.Write("TIDAK ADA ID DEPARTMENT : " + id_dpt);
             }
             else
             {
-                RoleCls role = GetById(input);
-                role.Role = Nama;
+                DepartmentCls dept = GetById(input);
+                dept.Department_Name = Nama;
 
-                hld_context.Entry(role).State = System.Data.Entity.EntityState.Modified;
+                hld_context.Entry(dept).State = System.Data.Entity.EntityState.Modified;
                 hld_context.SaveChanges();
             }
             return input;
         }
         // =========================================== DELETE =============================================
-        public void DeleteRole(int input)
+        public void DeleteDepartment(int input)
         {
-            var x = (from y in hld_context.Role_s where y.ID == input select y).FirstOrDefault();
-            hld_context.Role_s.Remove(x);
+            var x = (from y in hld_context.Department_s where y.ID == input select y).FirstOrDefault();
+            hld_context.Department_s.Remove(x);
             hld_context.SaveChanges();
         }
     }
