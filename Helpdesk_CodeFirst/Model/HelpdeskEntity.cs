@@ -10,6 +10,7 @@ namespace Helpdesk_CodeFirst
     class HelpdeskEntity
     {
     }
+    //membuat class ROLE dengan Field (ID,Role)
     class RoleCls
     {
         public int ID { get; set; }
@@ -20,6 +21,7 @@ namespace Helpdesk_CodeFirst
             throw new NotImplementedException();
         }
     }
+    //membuat class SubCategory dengan Field (ID,SubCategory_Name,CategoryID)
     class SubCategoryCls
     {
         public int ID { get; set; }
@@ -29,6 +31,9 @@ namespace Helpdesk_CodeFirst
         public virtual CategoryCls Category { get; set; }
 
     }
+
+    //membuat class TICKET dengan Field (ID,Description,Dtm_Crt,L1(kode admin),DueDate,Last_Update,OnProgressDate,OnWaitingDate,OnHoldDate,ResolvedTime,ClosedTime,Technician,Status,TipeID,UserID,CategoryID,SubCategoryID)
+    //digunakan untuk menampung 
     class TicketCls
     {
         public int ID { get; set; }
@@ -56,6 +61,7 @@ namespace Helpdesk_CodeFirst
         public virtual CategoryCls Category { get; set; }
         public virtual SubCategoryCls SubCategory { get; set; }
     }
+    //
     class UserCls
     {
         public int ID { get; set; }

@@ -10,7 +10,6 @@ namespace Helpdesk_CodeFirst.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Helpdesk_CodeFirst.Model.HelpdeskContext context)

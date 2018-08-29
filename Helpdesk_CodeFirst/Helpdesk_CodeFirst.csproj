@@ -59,6 +59,10 @@
     <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Migrations\201808290951358_HelpdeskEntity.cs" />
+    <Compile Include="Migrations\201808290951358_HelpdeskEntity.Designer.cs">
+      <DependentUpon>201808290951358_HelpdeskEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\HelpdeskContext.cs" />
     <Compile Include="Model\HelpdeskEntity.cs" />
@@ -68,6 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808290951358_HelpdeskEntity.resx">
+      <DependentUpon>201808290951358_HelpdeskEntity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
