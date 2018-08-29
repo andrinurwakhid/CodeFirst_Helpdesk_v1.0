@@ -7,25 +7,28 @@ using Helpdesk_CodeFirst.Model;
 
 namespace Helpdesk_CodeFirst.Controllers
 {
-    class CategoryController
+    class SubCategoryController
     {
         HelpdeskContext hld_context = new HelpdeskContext();
 
         // =========================================== INSERT =============================================
-        public void InsertCategory()
+        public void InsertSubCategory()
         {
             Console.Clear();
-            System.Console.Write("Category Name      : ");
+            System.Console.Write("SubCategory Name      : ");
             string catname = System.Console.ReadLine();
+            System.Console.Write("Category ID           : ");
+            int catid = Convert.ToInt32(System.Console.ReadLine());
 
-            CategoryCls call = new CategoryCls();
+            SubCategoryCls call = new SubCategoryCls();
             {
-                call.Category_Name = catname;
+                call.SubCategory_Name = catname;
+                call.CategoryID = catid;
 
             };
             try
             {
-                hld_context.Category_s.Add(call);
+                hld_context.SubCategory_s.Add(call);
                 var result = hld_context.SaveChanges();
             }
             catch (Exception ex)
@@ -34,48 +37,52 @@ namespace Helpdesk_CodeFirst.Controllers
             }
         }
         // =========================================== READ =============================================
-        public List<CategoryCls> GetAllCategory()
+        public List<SubCategoryCls> GetAllSubCategory()
         {
-            var getalls = hld_context.Category_s.ToList();
-            foreach (CategoryCls category in getalls)
+            var getalls = hld_context.SubCategory_s.ToList();
+            foreach (SubCategoryCls subcategory in getalls)
             {
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
-                System.Console.WriteLine("ID                    : " + category.ID);
-                System.Console.WriteLine("Category Name         : " + category.Category_Name);
+                System.Console.WriteLine("ID                        : " + subcategory.ID);
+                System.Console.WriteLine("Category ID               : " + subcategory.CategoryID);
+                System.Console.WriteLine("Sub Category Name         : " + subcategory.SubCategory_Name);
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
             }
             Console.ReadKey(true);
             return getalls;
         }
         // =========================================== UPDATE =============================================
-        public CategoryCls GetByid(int input)
+        public SubCategoryCls GetByid(int input)
         {
-            var cat = hld_context.Category_s.Find(input);
+            var cat = hld_context.SubCategory_s.Find(input);
             if (cat == null)
             {
                 System.Console.WriteLine("ID tersebut tidak ada");
             }
             return cat;
         }
-        public int UpdateCategory(int input)
+        public int UpdateSubCategory(int input)
         {
-            System.Console.Write("Category Name           : ");
-            string catnames = System.Console.ReadLine();
+            System.Console.Write("Sub Category Name           : ");
+            string subcatname = System.Console.ReadLine();
+            System.Console.Write("Category ID                 : ");
+            int catid = Convert.ToInt32(System.Console.ReadLine());
             Console.WriteLine("\n");
             Console.WriteLine("=============================================");
             System.Console.Write("MASUKKAN ULANG ID       : ");
-            int id_cat = Convert.ToInt32(System.Console.ReadLine());
+            int id_subcat = Convert.ToInt32(System.Console.ReadLine());
 
-            var getmhs = hld_context.Category_s.Find(id_cat);
+            var getmhs = hld_context.SubCategory_s.Find(id_subcat);
             if (getmhs == null)
             {
-                System.Console.Write("TIDAK ADA ID CATEGORY  : " + id_cat);
+                System.Console.Write("TIDAK ADA ID SUBCATEGORY  : " + id_subcat);
             }
             else
             {
-                CategoryCls ct = GetByid(input);
-                ct.ID = id_cat;
-                ct.Category_Name = catnames;
+                SubCategoryCls ct = GetByid(input);
+                ct.ID = id_subcat;
+                ct.CategoryID = catid;
+                ct.SubCategory_Name = subcatname;
 
                 hld_context.Entry(ct).State = System.Data.Entity.EntityState.Modified;
                 hld_context.SaveChanges();
@@ -83,10 +90,10 @@ namespace Helpdesk_CodeFirst.Controllers
             return input;
         }
         // =========================================== DELETE =============================================
-        public void DeleteCategory(int input)
+        public void DeleteSubCategory(int input)
         {
-            var x = (from y in hld_context.Category_s where y.ID == input select y).FirstOrDefault();
-            hld_context.Category_s.Remove(x);
+            var x = (from y in hld_context.SubCategory_s where y.ID == input select y).FirstOrDefault();
+            hld_context.SubCategory_s.Remove(x);
             hld_context.SaveChanges();
         }
     }

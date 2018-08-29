@@ -24,7 +24,8 @@ namespace Helpdesk_CodeFirst
     {
         public int ID { get; set; }
         public string SubCategory_Name { get; set; }
-        
+
+        public int CategoryID { get; set; }
         public virtual CategoryCls Category { get; set; }
 
     }

@@ -96,6 +96,8 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 6:
+                    SubCategoryController panggilsubcat = new SubCategoryController();
+                    panggilsubcat.InsertSubCategory();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -151,6 +153,8 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 6:
+                    SubCategoryController panggilsubcat = new SubCategoryController();
+                    panggilsubcat.GetAllSubCategory();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -218,6 +222,10 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 6:
+                    System.Console.Write("Masukkan Id yang ingin di ubah : ");
+                    input6 = Convert.ToInt32(System.Console.ReadLine());
+                    SubCategoryController panggilsubcat = new SubCategoryController();
+                    panggilsubcat.UpdateSubCategory(input6);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -234,7 +242,7 @@ namespace Helpdesk_CodeFirst
         }
         public void m4()
         {
-            int menu4, input1, input2, input3,input5;
+            int menu4, input1, input2, input3,input5,input6;
             string input4;
         m4:
             Console.Clear();
@@ -284,6 +292,10 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 6:
+                    System.Console.Write("Masukkan Id yang ingin di ubah : ");
+                    input6 = Convert.ToInt32(System.Console.ReadLine());
+                    SubCategoryController panggilsubcat = new SubCategoryController();
+                    panggilsubcat.DeleteSubCategory(input6);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
