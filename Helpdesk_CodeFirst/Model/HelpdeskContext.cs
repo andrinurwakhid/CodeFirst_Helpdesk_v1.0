@@ -21,5 +21,6 @@ namespace Helpdesk_CodeFirst.Model
         public DbSet<HolidayCls> Holiday_s { get; set; }
         public DbSet<RoleCls> Role_s { get; set; }
         public DbSet<DepartmentCls> Department_s { get; set; }
+        public DbSet<DueDateCls> DueDate_s { get; set; }
     }
 }

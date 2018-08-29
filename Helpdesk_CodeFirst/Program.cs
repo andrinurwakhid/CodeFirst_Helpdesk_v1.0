@@ -49,10 +49,10 @@ namespace Helpdesk_CodeFirst
         }
         public void isimenu()
         {
-            Console.WriteLine("||    1. ROLE        ||    4. CATEGORY     ||");
-            Console.WriteLine("||    2. DEPARTMENT  ||    5. SUBCATEGORY  ||");
-            Console.WriteLine("||    3. USER        ||    6. TICKET       ||");
-            Console.WriteLine("||                7. EXIT                  ||");
+            Console.WriteLine("||    1. ROLE        ||    5. CATEGORY     ||");
+            Console.WriteLine("||    2. DEPARTMENT  ||    6. SUBCATEGORY  ||");
+            Console.WriteLine("||    3. USER        ||    7. TICKET       ||");
+            Console.WriteLine("||    4. DueDATE     ||    8. EXIT         ||");
             Console.WriteLine("=============================================");
         }
         public void m1()
@@ -84,10 +84,14 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
+                    DueDateController panggildd = new DueDateController();
+                    panggildd.InsertDueDate();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
                 case 5:
+                    CategoryController panggilcat = new CategoryController();
+                    panggilcat.InsertCategory();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -135,10 +139,14 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
+                    DueDateController panggildd = new DueDateController();
+                    panggildd.GetAllDueDate();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
                 case 5:
+                    CategoryController panggilcat = new CategoryController();
+                    panggilcat.GetAllCategory();
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -160,7 +168,8 @@ namespace Helpdesk_CodeFirst
         }
         public void m3()
         {
-            int menu3, input1, input2, input3, input4;
+            int menu3, input1, input2, input3,input5,input6;
+            string input4;
         m3:
             Console.Clear();
             Console.WriteLine("================== UPDATE ===================");
@@ -193,10 +202,18 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
+                    System.Console.Write("Masukkan Id yang ingin di ubah : ");
+                    input4 = System.Console.ReadLine();
+                    DueDateController panggildd = new DueDateController();
+                    panggildd.UpdateDuedate(input4);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
                 case 5:
+                    System.Console.Write("Masukkan Id yang ingin di ubah : ");
+                    input5 = Convert.ToInt32(System.Console.ReadLine());
+                    CategoryController panggilcat = new CategoryController();
+                    panggilcat.UpdateCategory(input5);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
@@ -217,7 +234,8 @@ namespace Helpdesk_CodeFirst
         }
         public void m4()
         {
-            int menu4, input1, input2, input3, input4;
+            int menu4, input1, input2, input3,input5;
+            string input4;
         m4:
             Console.Clear();
             Console.WriteLine("================== DELETE ===================");
@@ -250,10 +268,18 @@ namespace Helpdesk_CodeFirst
                     Console.WriteLine("Sukses");
                     break;
                 case 4:
+                    System.Console.Write("Masukkan Id yang ingin di hapus : ");
+                    input4 = System.Console.ReadLine();
+                    DueDateController panggildd = new DueDateController();
+                    panggildd.DeleteDueDate(input4);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;
                 case 5:
+                    System.Console.Write("Masukkan Id yang ingin di hapus : ");
+                    input5 = Convert.ToInt32(System.Console.ReadLine());
+                    CategoryController panggilcat = new CategoryController();
+                    panggilcat.DeleteCategory(input5);
                     Console.WriteLine("=============================================");
                     Console.WriteLine("Sukses");
                     break;

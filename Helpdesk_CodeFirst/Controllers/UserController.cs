@@ -121,7 +121,7 @@ namespace Helpdesk_CodeFirst.Controllers
             var getmhs = hld_context.Role_s.Find(Convert.ToInt16(id_dpt));
             if (getmhs == null)
             {
-                System.Console.Write("TIDAK ADA ID DEPARTMENT : " + id_dpt);
+                System.Console.Write("TIDAK ADA ID User      : " + id_dpt);
             }
             else
             {
