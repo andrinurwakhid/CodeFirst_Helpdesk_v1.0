@@ -10,7 +10,6 @@ namespace Helpdesk_CodeFirst
     class HelpdeskEntity
     {
     }
-    //membuat class ROLE dengan Field (ID,Role)
     class RoleCls
     {
         public int ID { get; set; }
@@ -21,26 +20,21 @@ namespace Helpdesk_CodeFirst
             throw new NotImplementedException();
         }
     }
-    //membuat class SubCategory dengan Field (ID,SubCategory_Name,CategoryID)
     class SubCategoryCls
     {
         public int ID { get; set; }
         public string SubCategory_Name { get; set; }
-
-        public int CategoryID { get; set; }
+        
         public virtual CategoryCls Category { get; set; }
 
     }
-
-    //membuat class TICKET dengan Field (ID,Description,Dtm_Crt,L1(kode admin),DueDate,Last_Update,OnProgressDate,OnWaitingDate,OnHoldDate,ResolvedTime,ClosedTime,Technician,Status,TipeID,UserID,CategoryID,SubCategoryID)
-    //digunakan untuk menampung 
     class TicketCls
     {
         public int ID { get; set; }
         public string Description { get; set; }
         public DateTime Dtm_Crt { get; set; }
         public string L1 { get; set; }
-        public DateTime DueDate { get; set; }
+        public DateTime DueDateType { get; set; }
         public DateTime Last_update { get; set; }
         public DateTime OnProgressDate { get; set; }
         public DateTime OnWaitingDate { get; set; }
@@ -50,18 +44,17 @@ namespace Helpdesk_CodeFirst
         public string Technician { get; set; }
         public string Status { get; set; }
 
-        public int TipeID { get; set; }
+        public string DueDateID { get; set; }
         public int UserID { get; set; }
         public int CategoryID { get; set; }
         public int SubCategoryID { get; set; }
 
 
-        public virtual TipeCls Tipe { get; set; }
+        public virtual DueDateCls DueDate { get; set; }
         public virtual UserCls User { get; set; }
         public virtual CategoryCls Category { get; set; }
         public virtual SubCategoryCls SubCategory { get; set; }
     }
-    //
     class UserCls
     {
         public int ID { get; set; }
@@ -86,10 +79,10 @@ namespace Helpdesk_CodeFirst
         public DateTime Dates { get; set; }
         public string Description { get; set; }
     }
-    class TipeCls
+    class DueDateCls
     {
         public int ID { get; set; }
-        public string Tipe { get; set; }
+        public string Type { get; set; }
         public int Interval { get; set; }
 
     }

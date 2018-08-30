@@ -9,3 +9,4 @@ D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpde
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.pdb
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.Migrations.HelpdeskEntity.resources
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.csproj.GenerateResource.Cache
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\6 Visual Studio\Project\Helpdesk_CodeFirst\Helpdesk_CodeFirst\obj\Debug\Helpdesk_CodeFirst.csprojResolveAssemblyReference.cache

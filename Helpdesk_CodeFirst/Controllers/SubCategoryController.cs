@@ -23,7 +23,7 @@ namespace Helpdesk_CodeFirst.Controllers
             SubCategoryCls call = new SubCategoryCls();
             {
                 call.SubCategory_Name = catname;
-                call.CategoryID = catid;
+                //call.CategoryID = catid;
 
             };
             try
@@ -44,7 +44,7 @@ namespace Helpdesk_CodeFirst.Controllers
             {
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
                 System.Console.WriteLine("ID                        : " + subcategory.ID);
-                System.Console.WriteLine("Category ID               : " + subcategory.CategoryID);
+                //System.Console.WriteLine("Category ID               : " + subcategory.CategoryID);
                 System.Console.WriteLine("Sub Category Name         : " + subcategory.SubCategory_Name);
                 System.Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
             }
@@ -81,7 +81,7 @@ namespace Helpdesk_CodeFirst.Controllers
             {
                 SubCategoryCls ct = GetByid(input);
                 ct.ID = id_subcat;
-                ct.CategoryID = catid;
+               // ct.CategoryID = catid;
                 ct.SubCategory_Name = subcatname;
 
                 hld_context.Entry(ct).State = System.Data.Entity.EntityState.Modified;
